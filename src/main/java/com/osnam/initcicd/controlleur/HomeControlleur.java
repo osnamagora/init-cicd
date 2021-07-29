@@ -13,4 +13,10 @@ public class HomeControlleur {
     public String displayWelcome(@PathVariable String country) {
         return "Welcome to ".toUpperCase() + country.toUpperCase();
     }
+
+    @GetMapping("/home/{country}/{name}")
+    public String displayWelcomeUser(@PathVariable String country, @PathVariable String name) {
+        final String message =  "Welcome " + name + " to "+ country;
+        return message.toUpperCase();
+    }
 }
